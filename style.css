@@ -1,0 +1,247 @@
+:root {
+--Dark-Magenta: hsl(300, 43%, 22%);
+--Soft-Pink: hsl(333, 80%, 67%);
+--Light-Magenta: hsl(300, 24%, 96%)
+}
+body{
+  
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: 'Spartan', sans-serif;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.background-desktop{
+    display: flex;
+    width: 120vw;
+    height: 120vh;
+    z-index: -99;
+    position: absolute;
+    top: -10%;
+    justify-content: space-between;
+    
+}
+.mobile-background {
+    display: none;
+}
+.background-desktop img:first-child{
+    transform: scale(.8);
+    position: relative;
+    top: -10%;
+}
+.background-desktop img:last-child{
+transform: scale(.8);
+position: relative;
+top: 10%;
+right: -10%;
+}
+
+.main{
+    width: 70%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "left right"
+        "bottom bottom";
+
+}
+.content{
+padding-right: 3em;
+padding-bottom: 3em;
+
+}
+h2{
+    color: var(--Dark-Magenta);
+    font-size: 40pt;
+}
+.content p{
+    padding-right: 20%;
+    color: var(--Dark-Magenta);
+    line-height: 1.5em;
+    position: relative;
+    top: -1em;
+}
+
+.pink{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    background-color: var(--Light-Magenta);
+    margin-bottom: 1.5em;
+    font-weight: bold;
+    color: var(--Dark-Magenta);
+
+}
+
+.pink:first-of-type{
+    margin-top: 10%;
+}
+.pink:nth-of-type(2){
+    margin-left: 5%;
+}
+.pink:nth-of-type(3){
+    margin-left: 10%;
+}
+.pink img{
+    height: 50%;
+    margin-right: .5em;
+}
+
+.cards{
+    grid-area: bottom;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "one two three";
+    grid-column-gap: 20px;
+    
+    
+}
+.person {
+    padding: 3em 2em;
+    position: relative;
+    background-color: var(--Dark-Magenta);
+    color: var(--Light-Magenta);
+    border-radius: 20px;
+    margin-top: 5%;
+    
+}
+.person:nth-child(2){
+    top: 10%;
+}
+.person:nth-child(3){
+    top: 15%;
+}
+.person div:nth-child(2){
+    display: inline-block;
+    padding-left: 1em;
+    position: relative;
+    top: -1em;
+    
+}
+.person div:nth-child(2) h3 {
+    color: var(--Light-Magenta);
+}
+.person div:nth-child(2) p{
+    margin-top: -1em;
+    color: var(--Soft-Pink);
+}
+.person > img {
+    clip-path: circle(50%);
+}
+/*-----------------------------mobile query -----------------------*/
+
+@media (max-width: 768px){
+    .background-desktop{
+        display: none;
+    }
+
+    .mobile-background{
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+
+    
+    body{
+        height: auto;
+        width: 100vw;
+        overflow: scroll;
+    }
+    .cards > img:last-of-type{
+        position: absolute;
+        align-self: flex-end;
+    
+    
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 100vw;
+        align-items: center;
+    }
+    .main .content h2 {
+        font-size: 2.5em;
+        width: 60%;
+    }
+    .main p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+    .main h2, p{
+        text-align: center;
+        width: 85%;
+        align-self: center;
+        
+    }
+    .content{
+        padding-right: 1em;
+        padding-bottom: 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .content p{
+        top: 0;
+    }
+    .pink{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 85vw;
+        padding: 1em;
+    }
+    .pink:first-of-type{
+        margin-top: 3%;
+    }
+    .pink:nth-of-type(2), .pink:nth-of-type(3){
+        margin-left: 0;
+    }
+    .stars{
+        position: relative;
+        top: -15%;
+        padding-bottom: .5em;
+
+    }
+    .stars p {
+        margin: 0;
+    }
+    .cards{
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+    }
+    .personal-details {
+        width: 100%;
+    }
+    .person div:nth-child(2) > h3{
+        padding-bottom: 5%;
+    }
+    .person div:nth-child(2) > h3, .person div:nth-child(2) > h3 ~ p{
+        justify-content: left;
+    }
+    .person > p{
+        text-align: left;
+        line-height: 1.5em;
+        padding: 5% 0;
+    }
+    
+
+    }
+
+
